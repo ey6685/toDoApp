@@ -7,7 +7,7 @@
             <font size="+1" color="blue">Initialize Database</font></A></TD>
         </TR>
         <TR>
-            <TD align="left"><A HREF="View_Lists.php">
+            <TD align="left"><A HREF="viewlists.php">
             <font size="+1" color="blue">View Lists</font></A></TD>
         </TR>
     </TABLE>

@@ -19,17 +19,17 @@ try{
 }
 
 try{
-    //create tables
-    $createuser = "CREATE TABLE IF NOT EXISTS User (
+    //create Users
+    $createusers = "CREATE TABLE IF NOT EXISTS Users (
         user_id INT(6) NOT NULL AUTO_INCREMENT PRIMARY KEY,
         user_name VARCHAR(15) NOT NULL
     )";
 
     //use exec() because no results are returned
-    $conn->exec($createuser);
+    $conn->exec($createusers);
 
 }   catch (PDOException $e){
-    echo $createuser . "<br>" . $e->getMessage();
+    echo $createusers . "<br>" . $e->getMessage();
 }
 
 try{
@@ -39,7 +39,7 @@ try{
         task_name VARCHAR(30) NOT NULL,
         task_owner INT NOT NULL,
         FOREIGN KEY user_id(task_owner)
-        REFERENCES User(user_id)
+        REFERENCES Users(user_id)
         ON UPDATE CASCADE
         ON DELETE CASCADE
         )";

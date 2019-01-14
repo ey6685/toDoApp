@@ -1,17 +1,18 @@
 <?php
+
 require_once 'app/connect.php';
 
-$itemsQuery = $db->prepare("
+$tasksQuery = $db->prepare("
         SELECT task_id, task_name
         FROM tasks
         WHERE user_id = :user_id
 ");
 
-$itemsQuery->execute([
+$tasksQuery->execute([
     'user_id' => $_SESSION['user_id']
 ]);
 
-$items = $itemsQuery->rowCount() ? $itemsQuery : [];
+$tasks = $tasksQuery->rowCount() ? $tasksQuery : [];
 
 ?>
 
@@ -27,14 +28,21 @@ $items = $itemsQuery->rowCount() ? $itemsQuery : [];
     <h1>Your Tasks</h1>
 
     <ul>
-        <?php foreach($items as $item){
-            echo '<li>', $item['task_name'], '</li>';
-        }?>
+        <?php foreach($tasks as $task): ?>
+            <li>
+                <?php echo $task['task_name']; ?>
+                <a href="app/delete.php?as=delete&task=<?php echo $task['task_id']; ?>">Delete</a>
+            </li>
+        <?php endforeach; ?>
     </ul>
 
     <form action="app/add.php" method="post">
         <input type="text" name="task_name" placeholder="Type a new task here." class="submit">
         <input type="submit" value="Add" class="submit">
+    </form>
+
+    <form action="index.php">
+        <input type="submit" value="Home">
     </form>
 </body>
 </html>

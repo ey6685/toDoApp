@@ -37,8 +37,8 @@ try{
     $createtasks = "CREATE TABLE IF NOT EXISTS Tasks (
         task_id INT(6) NOT NULL AUTO_INCREMENT PRIMARY KEY,
         task_name VARCHAR(30) NOT NULL,
-        task_owner INT NOT NULL,
-        FOREIGN KEY user_id(task_owner)
+        user_id INT NOT NULL,
+        FOREIGN KEY user_id(user_id)
         REFERENCES Users(user_id)
         ON UPDATE CASCADE
         ON DELETE CASCADE

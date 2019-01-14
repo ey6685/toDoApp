@@ -7,8 +7,8 @@
             <font size="+1" color="blue">Initialize Database</font></A></TD>
         </TR>
         <TR>
-            <TD align="left"><A HREF="viewlists.php">
-            <font size="+1" color="blue">View Lists</font></A></TD>
+            <TD align="left"><A HREF="viewtasks.php">
+            <font size="+1" color="blue">View Tasks</font></A></TD>
         </TR>
     </TABLE>
 </body>

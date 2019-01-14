@@ -12,6 +12,7 @@ $itemsQuery->execute([
 ]);
 
 $items = $itemsQuery->rowCount() ? $itemsQuery : [];
+
 ?>
 
 <!DOCTYPE html>
@@ -26,13 +27,13 @@ $items = $itemsQuery->rowCount() ? $itemsQuery : [];
     <h1>Your Tasks</h1>
 
     <ul>
-        <?php foreach($items as $item1){
-            echo '<li>', $item1['task_name'], '</li>';
+        <?php foreach($items as $item){
+            echo '<li>', $item['task_name'], '</li>';
         }?>
     </ul>
 
-    <form action="add.php" method="post">
-        <input type="text" name="name" placeholder="Type a new task here." class="submit">
+    <form action="app/add.php" method="post">
+        <input type="text" name="task_name" placeholder="Type a new task here." class="submit">
         <input type="submit" value="Add" class="submit">
     </form>
 </body>

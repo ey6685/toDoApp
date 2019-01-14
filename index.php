@@ -1,14 +1,19 @@
-<title>Home</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>View Tasks</title>
+</head>
 <body>
-<h1>Home Page</h1>
-    <TABLE style="background-color: 3b3b3cc" border="2">
-        <TR>
-            <TD align="left"><A HREF="app/init.php">
-            <font size="+1" color="blue">Initialize Database</font></A></TD>
-        </TR>
-        <TR>
-            <TD align="left"><A HREF="viewtasks.php">
-            <font size="+1" color="blue">View Tasks</font></A></TD>
-        </TR>
-    </TABLE>
+    <h1>Home Page</h1>
+        <form action="app/init.php">
+            <input type="submit" value="Initialize Database">
+        </form>
+        <br>
+        <form action="viewtasks.php">
+            <input type="submit" value="View List">
+        </form>
 </body>
+</html>

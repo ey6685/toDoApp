@@ -51,6 +51,7 @@ try{
 }
 
 try{
+    //generate generic user in table Users
     $createuser1= "INSERT INTO Users (user_name)
         VALUES ('user1')";
     

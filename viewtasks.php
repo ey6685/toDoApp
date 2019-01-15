@@ -37,7 +37,7 @@ $tasks = $tasksQuery->rowCount() ? $tasksQuery : [];
     </ul>
 
     <form action="app/add.php" method="post">
-        <input type="text" name="task_name" placeholder="Type a new task here." class="submit">
+        <input type="text" name="task_name" placeholder="Type a new task here." class="submit" required>
         <input type="submit" value="Add" class="submit">
     </form>
 
